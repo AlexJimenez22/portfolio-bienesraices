@@ -1,0 +1,40 @@
+.no-webp .inicio{ // Sino soporta webp usara la imagen jpg / la clase de webp viene con modernizer
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio{ // Si soporta webp usara la imagen webp / la clase de webp viene con modernizer
+    background-image: url(../img/header.webp);
+}
+
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+
+    &.inicio{ // hace referencia a .header.inicio
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include tablet{ // Cuando sea tamaño de tablet
+            min-height: 70rem; // .inicio tomara este tamaño
+        }
+
+        .contenido-header{ // Toma esta altura solo cuando esta en .header.inicio .contenido-header
+            @include tablet{
+                min-height: 70rem; // Toma la misma altura que el header
+            }
+        }
+    }
+}
+
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+}

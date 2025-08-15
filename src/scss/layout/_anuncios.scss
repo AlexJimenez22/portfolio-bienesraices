@@ -1,0 +1,46 @@
+@include tablet{
+    .contenedor-anuncios{
+        @include grid(3, 2rem);
+    }
+}
+
+
+.anuncio{
+    background-color: lighten($gris, 5);
+    border: 1px solid darken($gris, 10);
+
+    .contenido-anuncio{
+        padding: 2rem;
+    }
+
+    h3, p{
+        margin: 0;
+    }
+
+}
+.precio{
+    color: $verde;
+    font-size: 3rem;
+    font-weight: $bold;
+}
+
+.iconos-caracteristicas{
+    display: flex; // Pone los iconos en row ->
+    list-style: none; // Quita los puntos de la lista
+    padding: 0;
+    max-width: 40rem;
+
+    li{
+        flex: 1; // Toma todo el espacio disponible
+        display: flex; // Activamos flex
+        img{
+            flex: 0 0 3rem; // le decimos que el flex-basis (tamaño base) es de 3rem 
+            margin-right: 1rem;
+        }
+
+        p{
+            font-weight: $black;
+        }
+    }
+     
+}

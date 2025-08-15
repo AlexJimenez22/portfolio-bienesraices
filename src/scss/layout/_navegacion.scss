@@ -1,0 +1,90 @@
+.derecha{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet{
+        align-items: flex-end;
+    }
+
+    .dark-mode-boton{
+        max-width: 3rem;
+        margin: 3rem 0;
+        filter: invert(100%);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+}
+
+.barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    @include tablet{
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    
+}
+
+.navegacion{
+
+    visibility: hidden; // Hace que desaparezca el elemento
+    opacity: 0; // Hace que la opacidad sea de 0
+
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @include tablet{
+        display: flex;
+        align-items: center;
+
+        visibility: visible;
+        opacity: 1;
+    }
+
+    a{
+        color: $blanco;
+        font-size: 2.2rem;
+        display: block; // El display block se aplica directamente al elemento hijo NO al contenedor
+        text-align: center;
+        @include tablet{
+            font-size: 1.8rem;
+            margin-right: 2rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+
+        &:hover{
+            color: $verde;
+        }
+
+    }
+
+}
+
+.mobile-menu{
+    @include tablet{
+        display: none;
+    }
+
+    img{
+        width: 5rem;
+    }
+}
+
+.mostrar{
+    visibility: visible;
+    opacity: 1;
+}
